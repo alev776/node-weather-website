@@ -5,7 +5,7 @@ const forecast = (latitud, longitud, callback) => {
     let er;
     request({ url, json: true }, (error, { body }) => {
         try {
-            const data = `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degress out. It feels like ${body.current.feelslike} degress out`;
+            const data = `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degress out. It feels like ${body.current.feelslike} degress out, with humidity of ${body.current.humidity}%t`;
             callback(undefined, data);
         } catch (er) {
             callback(er, undefined);
